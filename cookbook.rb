@@ -1,20 +1,21 @@
 Cookbook = Class.new
 class Cookbook
+	attr_accessor :title
+	attr_reader :recipes
 	def initialize(title)
 		@title = title
+		@recipes = []
 	end
-	def title
-		@title 
-	end
-	def title=(new_title)
-		@title = new_title
-	end
+	def add_recipe(recipe)
+		@recipes.push(recipe)
+end
+	
 end
 
 Recipe = Class.new
 class Recipe
-	attr_reader :title
-	attr_writer :steps
+	attr_accessor :title
+	attr_accessor :steps
 	attr_accessor :ingredients
 	
 	def initialize (title, ingredients, steps)
@@ -22,24 +23,4 @@ class Recipe
 		@ingredients = ingredients
 		@steps = steps
 	end
-	def title
-		@title
-	end
-	def title=(new_title)
-		@title = new_title 
-	end
-	def ingredients
-		@ingredients
-	end
-	def ingredients=(new_ingredients)
-		@ingredients = new_ingredients
-	end
-	def steps
-		@steps
-	end
-	def steps=(new_steps)
-		@steps = new_steps
-	end
-		
-
 end
