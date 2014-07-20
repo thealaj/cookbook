@@ -30,4 +30,11 @@ class Recipe
 		@ingredients = ingredients
 		@steps = steps
 	end
+	def print_recipe
+		puts "Title: #{@title}" 
+		puts "Ingredients: #{@ingredients.join(", ")}"
+		puts "Steps: #{@steps.join(", ")}"
+
+	end
+
 end
