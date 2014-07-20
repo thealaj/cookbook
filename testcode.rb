@@ -30,3 +30,6 @@ taco = Recipe.new("Paco's Taco", ["taco shell", "pulled pork", "onion"], ["assem
 mex_cuisine.add_recipe(taco)
 p mex_cuisine.recipes
 mex_cuisine.recipe_titles
+
+# print cookbook
+mex_cuisine.print_cookbook
