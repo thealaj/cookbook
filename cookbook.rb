@@ -1,14 +1,21 @@
 Cookbook = Class.new
 class Cookbook
 	attr_accessor :title
-	attr_reader :recipes
+	attr_accessor :recipes
 	def initialize(title)
 		@title = title
 		@recipes = []
 	end
 	def add_recipe(recipe)
 		@recipes.push(recipe)
-end
+        puts "Added recipe to the collection: #{recipe.title}"
+	end
+	def recipe_titles
+		@recipes.each { |x| puts x.title }
+	end
+ 	def recipe_ingredients 
+		@recipes.each { |x| puts "These are the ingredients for the #{x.title}: #{x.ingredients}" }
+	end
 	
 end
 
