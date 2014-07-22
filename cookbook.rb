@@ -18,7 +18,14 @@ class Cookbook
 	end
 	def print_cookbook
 		puts "Recipes"
-		@recipes.each { |x| puts "Title: \n #{x.title} \n Ingredients: \n #{x.ingredients.join(", ")} \n Steps: \n #{x.steps.join(", ") } \n \n " }
+		@recipes.each do |recipe| 
+			puts "Title: "
+			puts recipe.title 
+			puts "Ingredients: "
+			puts recipe.ingredients.join(", ") 
+			puts "Steps: "
+			recipe.steps.each_with_index { |step, index| puts "#{index + 1}.) #{step}" }
+		end
 	end
 end
 
@@ -36,7 +43,7 @@ class Recipe
 	def print_recipe
 		puts "Title: #{@title}" 
 		puts "Ingredients: #{@ingredients.join(", ")}"
-		puts "Steps: #{@steps.join(", ")}"
+		steps.each_with_index{ |step, index| puts "#{index + 1}.) #{@steps}" }
 
 	end
 
